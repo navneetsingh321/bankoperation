@@ -1,0 +1,7 @@
+com\springboot\platform\response\ListResponseObject.class
+com\springboot\platform\controller\BankController.class
+com\springboot\platform\model\Login.class
+com\springboot\platform\response\BaseResponseObject.class
+com\springboot\platform\BankApplication.class
+com\springboot\platform\response\SingleResponseObject.class
+com\springboot\platform\response\EmbeddedResponse.class
