@@ -1,0 +1,17 @@
+package snippet;
+
+public class Snippet {
+	com.springboot.platform.controller
+	com.springboot.platform.dao
+	com.springboot.platform.daoimpl
+	com.springboot.platform.error
+	com.springboot.platform.exception
+	com.springboot.platform.input
+	com.springboot.platform.model
+	com.springboot.platform.persistence
+	com.springboot.platform.response
+	com.springboot.platform.service
+	com.springboot.platform.serviceimpl
+	com.springboot.platform.view
+}
+
