@@ -13,12 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.platform.error.BNKError;
-import com.springboot.platform.error.BNKErrors.CODE;
-import com.springboot.platform.error.BNKErrors.TYPE;
 import com.springboot.platform.exception.InvalidInputException;
 import com.springboot.platform.input.LoginInput;
-import com.springboot.platform.model.Login;
 import com.springboot.platform.response.SingleResponseObject;
 import com.springboot.platform.serviceimpl.BankServiceImpl;
 
@@ -34,14 +30,14 @@ public class LoginController {
 	@Transactional
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<SingleResponseObject<String>> login(@Valid @RequestBody LoginInput loginInput) throws InvalidInputException {
-		Login login = bankService.getLogin(loginInput);
-		if ("".equals(loginInput.getUsername())) {
+		bankService.saveLogin(loginInput);
+		/*if ("".equals(loginInput.getUsername())) {
 			throw new InvalidInputException(new BNKError(TYPE.VALIDATION_ERROR, CODE.INPUT_MISSING, null, "Missing input field: "));
 		}
 		if(login == null){
 			throw new InvalidInputException(new BNKError(TYPE.VALIDATION_ERROR, CODE.AUTHORISATION_FAILED, null, "Invalid credentials"));
-	}
-		SingleResponseObject<String> resp = new SingleResponseObject<String>("");
+		}*/
+		SingleResponseObject<String> resp = new SingleResponseObject<String>(loginInput.getId());
 		return new ResponseEntity<SingleResponseObject<String>>(resp, HttpStatus.OK);
 	}
 }

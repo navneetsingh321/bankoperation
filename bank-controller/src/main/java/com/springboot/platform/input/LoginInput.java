@@ -5,6 +5,8 @@ public class LoginInput {
 	private String id;
 	private String username;
 	private String password;
+	
+	public LoginInput(){};
 
 	public String getId() {
 		return id;
