@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginService : LoginService, private router : Router) { }
 
   ngOnInit(): void {
-    //this.router.navigate(['/login']);  
+   // this.router.navigate(['/profile' , localStorage.getItem('id')]);  
   }
 
   form = new FormGroup({  
@@ -31,11 +31,13 @@ export class LoginComponent implements OnInit {
     console.log(this.login.password);
     this.loginService.login(this.login).subscribe(
       response => {  
+        console.log("inside response")
         let result =  response.json();  
-        if(result > 0){
+        alert(result.getItem)
+       // if(result > 0){
           console.log("inside result if")
-        this.router.navigate(['/login']);
-        }
+        this.router.navigate(['/profile']);
+        //}
      
       },
       error => {  

@@ -39,7 +39,7 @@ import { AdminService } from './services/admin.service';
         component : SignupComponent   
       },  
       {  
-        path : 'profile/:adminId',  
+        path : 'profile',  
         component : ProfileComponent  
       }  
     ])  

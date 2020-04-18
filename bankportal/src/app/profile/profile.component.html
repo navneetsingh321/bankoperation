@@ -1,1 +1,36 @@
 
+<div style="text-align: center ; margin-right: 40px;">  
+  
+    <h2>  <a (click)="getProfileData()" >Get Profile Details</a> <br> </h2>  
+      
+  </div>  
+    
+  <div *ngIf="haveData > 0 && dataRequest">  
+      <table class="table table-responsive table-striped">  
+    
+          <tr>  
+            <th>First Name</th>  
+            <th>Last Name</th>  
+            <th>EmailId</th>  
+            <th>Username</th>
+            <th>Password</th> 
+            <th>Confirm Password</th> 
+          </tr>  
+            
+          <ng-container *ngFor = "let item of data">  
+              <tr>  
+                <td>{{item.firstName}}</td>  
+                <td>{{item.lastName}}</td>  
+                <td>{{item.emailId}}</td>  
+                <td>{{item.username}}</td>  
+                <td>{{item.password}}</td> 
+                <td>{{item.confirmPassword}}</td> 
+              </tr>  
+          </ng-container>  
+      
+        </table>  
+  </div>  
+    
+  <div *ngIf="haveData == 0 && dataRequest">  
+      Don't have Data.  
+  </div>  
